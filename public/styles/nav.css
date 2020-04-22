@@ -1,0 +1,22 @@
+nav {
+  position: fixed;
+  height: 120px;
+  width: 100%;
+  top: 0;
+  color: #FFFFFF;
+  z-index: 1;
+  background-color: #4056A1;
+  padding: 1.5em;
+  float: left;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 30px;
+}
+
+.logo {
+  font-family: "Bungee", sans-serif;
+}
+
+.right-nav {
+  float: right;
+}
+
