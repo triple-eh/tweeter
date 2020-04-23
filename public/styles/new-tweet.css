@@ -1,14 +1,9 @@
-.new-tweet h2 {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #4056A1;
-}
-.new-tweet form label {
+.new-tweet label {
   color: #4056A1;
   font-weight: bold;
 }
-.new-tweet form textarea {
+
+.new-tweet textarea {
   font-size: 20px;
   height:68px;
   width:100%;
@@ -22,7 +17,7 @@
   border-color:#4056A1;
 }
 
-.new-tweet form button {
+.new-tweet button {
   font-family: Bungee, sans-serif;
   background-color:#4056A1;
   color: snow;
@@ -30,12 +25,12 @@
   padding: 5px 10px;
 }
 
-.new-tweet output.counter {
+.new-tweet .counter {
   float: right;
   font-weight: 600;
   font-size: 0.8em;
 }
 
-.new-tweet output.counter.negative {
+.new-tweet .counter.negative {
   color: crimson;
 }
