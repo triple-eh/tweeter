@@ -24,9 +24,10 @@
   float: left;
 }
 
-.handle {
+.tweet div.handle {
   float: right;
   font-weight: bold;
+  display: none;
 }
 
 .user, .handle {
@@ -45,6 +46,10 @@ div.avatar img {
 
 .tweet:hover .content {
   border-color: coral;
+}
+
+.tweet:hover div.handle {
+  display: inline-block;
 }
 
 .tweet .content p {
