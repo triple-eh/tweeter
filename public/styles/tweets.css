@@ -1,0 +1,63 @@
+#tweets {
+  margin-top:10px;
+}
+
+.tweet {
+  border: 2px solid #4056A1;
+  padding: 5px;
+}
+
+.tweet header {
+  height: 3em;
+}
+.tweet header div {
+  height: 100%;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.avatar, .user {
+  float: left;
+}
+
+.handle {
+  float: right;
+  font-weight: bold;
+}
+
+.user, .handle {
+  padding: 0.2em;
+}
+
+div.avatar img {
+  max-height: 100%;
+  max-width: 100%;
+  padding:0;
+}
+
+.tweet .content {
+  border-bottom: 2px solid #4056A1;
+}
+
+.tweet .content p {
+  margin: 0.2em;
+}
+
+.tweet footer {
+  margin-top: 10px;
+  height: 1em;
+}
+.tweet footer div {
+  display: inline-block;
+  font-size: 70%;
+  height: auto;
+}
+
+.tweet .age {
+  float: left;
+}
+
+.tweet .actions {
+  float: right;
+  color: #4056A1;
+}

@@ -21,6 +21,9 @@
     
     <!-- Form CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    
+    <!-- Tweets CSS -->
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- Flat icons -->
     <link rel="stylesheet" href="/styles/font/flaticon.css" type="text/css" />
@@ -42,7 +45,7 @@
       </span>
     </nav>
 
-    <header>
+    <header class="profile">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -55,13 +58,40 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label><br>
           <textarea name="text" id="tweet-text"></textarea><br>
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </form>
+      </section>
+      <section id="tweets">
+        <article class="tweet">
+          <header>
+            <div class='avatar'>
+              <img src="/images/avatar-3.png">
+            </div>
+            <div class='user'>
+              <p>Anika</p>
+            </div>
+            <div class='handle'>
+              <p>@Anika</p>
+            </div>
+          </header>
+          <div class="content">
+            <p>Who knows what will happen. All we can do is stay healthy</p>
+          </div>
+          <footer>
+            <div class='age'>
+              <span>10 days ago</span>
+            </div></date>
+            <div class='actions'>
+              <i class='flaticon-flags'></i>
+              <i class='flaticon-heart'></i>
+              <i class='flaticon-retweet'></i>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
     <script src="./scripts/composer-char-counter.js"></script>

@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 22/04/2020 17:30
+    Creation date: 23/04/2020 20:35
     */
 
     @font-face {
@@ -38,5 +38,11 @@
     }
 
     .flaticon-down:before { content: "\f100"; }
+.flaticon-retweet:before { content: "\f101"; }
+.flaticon-heart:before { content: "\f102"; }
+.flaticon-flags:before { content: "\f103"; }
     
     $font-Flaticon-down: "\f100";
+    $font-Flaticon-retweet: "\f101";
+    $font-Flaticon-heart: "\f102";
+    $font-Flaticon-flags: "\f103";

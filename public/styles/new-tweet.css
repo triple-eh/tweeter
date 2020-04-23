@@ -4,11 +4,11 @@
   margin-bottom: 10px;
   color: #4056A1;
 }
-form label {
-  color: coral;
+.new-tweet form label {
+  color: #4056A1;
   font-weight: bold;
 }
-form textarea {
+.new-tweet form textarea {
   font-size: 20px;
   height:68px;
   width:100%;
@@ -19,10 +19,10 @@ form textarea {
   border-left: none;
   border-right:none;
   border-width: thick;
-  border-color: coral;
+  border-color:#4056A1;
 }
 
-form button {
+.new-tweet form button {
   font-family: Bungee, sans-serif;
   background-color:#4056A1;
   color: snow;
@@ -30,12 +30,12 @@ form button {
   padding: 5px 10px;
 }
 
-output.counter {
+.new-tweet output.counter {
   float: right;
   font-weight: 600;
   font-size: 0.8em;
 }
 
-output.counter.negative {
+.new-tweet output.counter.negative {
   color: crimson;
 }
