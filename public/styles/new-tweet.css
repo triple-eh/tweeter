@@ -10,7 +10,7 @@ form label {
 }
 form textarea {
   font-size: 20px;
-  height:34px;
+  height:68px;
   width:100%;
   resize: none;
   outline: none;
@@ -34,4 +34,8 @@ output.counter {
   float: right;
   font-weight: 600;
   font-size: 0.8em;
+}
+
+output.counter.negative {
+  color: crimson;
 }
