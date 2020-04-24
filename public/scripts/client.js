@@ -5,30 +5,13 @@
  */
 
 $(() => {
-  const tweets = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
+  const getTweets = () => {
+    const $tweets = $('#tweets');
+    $tweets.empty();
+    $.getJSON('tweets',(tweets) => {
+      renderTweets(tweets);
+    });
+  };
 
   const calculateTweetAge = (created) => {
     const currentDate = new Date();
@@ -71,6 +54,20 @@ $(() => {
     });
   };
 
-  renderTweets(tweets);
+  const tweeting = () => {
+    const $form = $('form');
+    console.log($form);
+    $form.on('submit', (e) => {
+      e.preventDefault();
+      const tweetSerialized = $(e.target).serialize();
+      $(e.target).children('textarea').val("");
+      $.post('/tweets', tweetSerialized, () => {
+        getTweets();
+      });
+    });
+  };
+  
+  getTweets();
+  tweeting();
   
 });
