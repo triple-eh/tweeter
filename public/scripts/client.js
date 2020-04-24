@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 $(() => {
   const tweets = [
     {
@@ -29,37 +30,38 @@ $(() => {
     }
   ];
 
-  const calculateTweetAge = (created_at) => {
+  const calculateTweetAge = (created) => {
     const currentDate = new Date();
-    const createdAt = new Date(created_at);
+    const createdAt = new Date(created);
     const oneDay = 24 * 60 * 60 * 1000;
     return Math.round((currentDate - createdAt) / oneDay);
   };
   
   const createTweetElement = (tweet) => {
-    const $tweets = $("#tweets");
-    const $article = $('<article>',{'class':'tweet'});
+    const $article = $('<article>', {'class': 'tweet'});
+
     // header -> div class=avatar -> img | div class=user -> p | div class=handle = p
     const $header = $('<header>');
-    const $avatar = $('<div>',{'class': 'avatar'}).append($('<img>',{'src':`${tweet.user.avatars}`}));
-    const $user = $('<div>',{'class':'user'}).append($('<p>').text(`${tweet.user.name}`));
-    const $handle = $('<div>',{'class':'handle'}).append($('<p>').text(`${tweet.user.handle}`));
-    $header.append($avatar,$user,$handle);
+    const $avatar = $('<div>', {'class': 'avatar'}).append($('<img>', {'src': `${tweet.user.avatars}`}));
+    const $user = $('<div>', {'class': 'user'}).append($('<p>').text(`${tweet.user.name}`));
+    const $handle = $('<div>', {'class': 'handle'}).append($('<p>').text(`${tweet.user.handle}`));
+    $header.append($avatar, $user, $handle);
+
     // content
-    const $content = $('<div>',{'class':'content'}).append($('<p>').text(`${tweet.content.text}`));
+    const $content = $('<div>', {'class': 'content'}).append($('<p>').text(`${tweet.content.text}`));
+
     // footer - div class=age - span | div class=actions - i class 
     const $footer = $('<footer>');
-    //calculate tweet age in days
     const daysAgo = calculateTweetAge(tweet.created_at);
-    const $age = $('<div>',{'class':'age'}).append($('<span>').text(`${daysAgo} days ago`));
-    const $actions = $('<div>',{'class':'actions'})
+    const $tweetAge = $('<div>', {'class': 'age'}).append($('<span>').text(`${daysAgo} days ago`));
+    const $actions = $('<div>', {'class': 'actions'})
       .append(
-        $('<i>',{'class':'flaticon-flags'}),
-        $('<i>',{'class':'flaticon-heart'}),
-        $('<i>',{'class':'flaticon-retweet'})
+        $('<i>', {'class': 'flaticon-flags'}),
+        $('<i>', {'class': 'flaticon-heart'}),
+        $('<i>', {'class': 'flaticon-retweet'})
       );
-    $footer.append($age,$actions);
-    return $article.append($header,$content,$footer);
+    $footer.append($tweetAge, $actions);
+    return $article.append($header, $content, $footer);
   };
 
   const renderTweets = (tweets) => {
