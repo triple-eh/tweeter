@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(() => {
-  const testTweets = [
+  const tweets = [
     {
       "user": {
         "name": "Newton",
@@ -61,9 +61,14 @@ $(() => {
     $footer.append($age,$actions);
     return $article.append($header,$content,$footer);
   };
+
+  const renderTweets = (tweets) => {
+    tweets.forEach((tweet) => {
+      const $tweet = createTweetElement(tweet);
+      $("#tweets").append($tweet);
+    });
+  };
+
+  renderTweets(tweets);
   
-  testTweets.forEach((tweet) => {
-    const $tweet = createTweetElement(tweet);
-    $("#tweets").append($tweet);
-  });
 });
