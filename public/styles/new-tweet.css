@@ -34,3 +34,19 @@
 .new-tweet .counter.negative {
   color: crimson;
 }
+
+#submission-error {
+  display: none;
+}
+
+#submission-error.error {
+  display: blcok;
+  margin-top: 10px;
+  display: block;
+  border: 2px solid red;
+  color: red;
+}
+
+#submission-error p {
+  margin: 10px;
+}

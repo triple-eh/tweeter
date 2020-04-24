@@ -76,9 +76,15 @@ $(() => {
     $form.on('submit', (e) => {
       e.preventDefault();
       const tweet = $(e.target).children('textarea').val();
+      const $submissionError = $('#submission-error');
+      const $errorMessage = $submissionError.children('p');
       if (!tweetValidation.isValid(tweet)) {
-        return alert(tweetValidation.validationError(tweet));
+        const error = tweetValidation.validationError(tweet);
+        if (!$submissionError.hasClass('error')) $submissionError.addClass('error');
+        $errorMessage.text(error);
+        return;
       }
+      if ($submissionError.hasClass('error')) $submissionError.removeClass('error');
       const tweetSerialized = $(e.target).serialize();
       $(e.target).children('textarea').val("");
       $.post('/tweets', tweetSerialized, () => {
