@@ -5,7 +5,7 @@
  */
 
 $(() => {
-  const getTweets = () => {
+  const loadTweets = () => {
     const $tweets = $('#tweets');
     $tweets.empty();
     $.getJSON('tweets',(tweets) => {
@@ -62,12 +62,12 @@ $(() => {
       const tweetSerialized = $(e.target).serialize();
       $(e.target).children('textarea').val("");
       $.post('/tweets', tweetSerialized, () => {
-        getTweets();
+        loadTweets();
       });
     });
   };
   
-  getTweets();
+  loadTweets();
   tweeting();
   
 });
