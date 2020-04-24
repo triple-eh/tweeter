@@ -1,10 +1,27 @@
 /*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+* Client-side JS logic goes here
+* jQuery is already loaded
+* Reminder: Use (and do all your DOM work in) jQuery's document ready function
+*/
+
 
 $(() => {
+
+  const MAXTWEETLENGTH = 140;
+
+  const tweetValidation = {
+    isValid: function(tweet) {
+      return (tweet.length > 0 && tweet.length <= MAXTWEETLENGTH)
+    },
+    validationError: function(tweet) {
+      if (this.isValid(tweet)) return;
+      let error;
+      if (tweet.length <= 0) error = 'The tweet must contain something';
+      if (tweet.length > MAXTWEETLENGTH) error = `The tweet cannot be longer than ${MAXTWEETLENGTH}`;
+      return error;
+    }
+  };
+
   const loadTweets = () => {
     const $tweets = $('#tweets');
     $tweets.empty();
@@ -56,9 +73,12 @@ $(() => {
 
   const tweeting = () => {
     const $form = $('form');
-    console.log($form);
     $form.on('submit', (e) => {
       e.preventDefault();
+      const tweet = $(e.target).children('textarea').val();
+      if (!tweetValidation.isValid(tweet)) {
+        return alert(tweetValidation.validationError(tweet));
+      }
       const tweetSerialized = $(e.target).serialize();
       $(e.target).children('textarea').val("");
       $.post('/tweets', tweetSerialized, () => {
