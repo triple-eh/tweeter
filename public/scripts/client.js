@@ -59,8 +59,11 @@ $(() => {
         $('<i>',{'class':'flaticon-retweet'})
       );
     $footer.append($age,$actions);
-    $tweets.append($article.append($header,$content,$footer));
+    return $article.append($header,$content,$footer);
   };
   
-  testTweets.forEach((tweet) => createTweetElement(tweet));
+  testTweets.forEach((tweet) => {
+    const $tweet = createTweetElement(tweet);
+    $("#tweets").append($tweet);
+  });
 });
