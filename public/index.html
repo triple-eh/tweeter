@@ -62,7 +62,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
+      <section class="new-tweet" id="new-tweet">
         <form action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label><br>
           <textarea name="text" id="tweet-text"></textarea><br>
@@ -74,6 +74,9 @@
         <p></p>
       </section>
       <section id="tweets"></section>
+      <div class="go-to-top">
+        <i class='flaticon-double-up-arrow-angles'></i>
+      </div>
     </main>
     <script src="./scripts/composer-char-counter.js"></script>
   </body>

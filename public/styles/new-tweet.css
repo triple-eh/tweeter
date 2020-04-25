@@ -19,7 +19,6 @@
   border-right:none;
   border-width: thick;
   border-color:#4056A1;
-  /* animation: slidedown 1s; */
 }
 
 .new-tweet button {
@@ -45,7 +44,7 @@
 }
 
 #submission-error.error {
-  display: blcok;
+  display: block;
   margin-top: 10px;
   display: block;
   border: 2px solid red;

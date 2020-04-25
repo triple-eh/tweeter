@@ -75,6 +75,8 @@ $(() => {
     const $form = $('form');
     $form.on('submit', (e) => {
       e.preventDefault();
+
+      // e.target is where the event has fired
       const tweet = $(e.target).children('textarea').val();
       const $submissionError = $('#submission-error');
       const $errorMessage = $submissionError.children('p');
@@ -92,13 +94,12 @@ $(() => {
       });
     });
   };
-
-  const showForm = () => {
-    const $link = $('i.flaticon-down');
+  
+  const goToTopFrom = (fromElement) => {
     const $tweetForm = $('.new-tweet');
-    $link.on('click', (e) => {
+    fromElement.on('click', () => {
       $tweetForm.slideDown();
-      const newTweetTop = $('.new-tweet').offset().top
+      const newTweetTop = $('.new-tweet').offset().top;
       const navHeight = $('nav').outerHeight();
       const scrollToPosition = newTweetTop - navHeight - 10; //10 for margin
       $('html,body').animate({
@@ -107,9 +108,34 @@ $(() => {
       $('.new-tweet textarea').focus();
     });
   };
+
+  
+  const showButton = () => {
+    const $goToTop = $('.go-to-top');
+    
+    // listen to a scroll event
+    $(window).scroll(() => {
+      
+      // get the position (top) that is just at the top of the new-tweet form
+      const navHeight = $('nav').outerHeight();
+      const scrollTopThreshold = $('.new-tweet').offset().top - navHeight;
+      
+      //.new-tweet is hidden in the beginning, do not fire if it's hidden
+      if ($('.new-tweet').is(':hidden')) return;
+      if ($(window).scrollTop() > scrollTopThreshold) {
+        if (!$goToTop.hasClass('show')) $goToTop.addClass('show')
+      }
+      if ($(window).scrollTop() <= scrollTopThreshold) {
+        if ($goToTop.hasClass('show')) $goToTop.removeClass('show')
+      }
+    });
+  };
+  
+  
+  goToTopFrom($('i.flaticon-down'));
+  goToTopFrom($('.go-to-top'));
   
   loadTweets();
   tweeting();
-  showForm();
-  
+  showButton();
 });
