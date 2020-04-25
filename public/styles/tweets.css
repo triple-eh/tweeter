@@ -1,4 +1,5 @@
 #tweets {
+  position: element(.new-tweet);
   margin-top:10px;
 }
 

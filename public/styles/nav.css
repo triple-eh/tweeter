@@ -6,7 +6,7 @@ nav {
   color: #FFFFFF;
   z-index: 1;
   background-color: #4056A1;
-  padding: 1.5em;
+  padding: 1em;
   float: left;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 30px;
@@ -14,9 +14,47 @@ nav {
 
 .logo {
   font-family: "Bungee", sans-serif;
+  float: left;
 }
 
 .right-nav {
   float: right;
 }
 
+.right-nav i.flaticon-down::before {
+  margin: 0;
+  text-align: center;
+  display: inline-block;
+}
+
+.right-nav i.flaticon-down {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  animation: slide 1s infinite;
+}
+
+.right-nav i.flaticon-down:hover {
+  cursor: pointer;
+}
+
+@keyframes slide {
+  0%, 100% {
+    margin-top:0;
+  }
+
+  20% {
+    margin-top:1px;
+  }
+
+  40% {
+    margin-top:2px;
+  }
+  60% {
+    margin-top:3px;
+  }
+  80% {
+    margin-top:4px;
+  }
+}

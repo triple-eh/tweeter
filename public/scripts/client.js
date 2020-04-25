@@ -92,8 +92,24 @@ $(() => {
       });
     });
   };
+
+  const showForm = () => {
+    const $link = $('i.flaticon-down');
+    const $tweetForm = $('.new-tweet');
+    $link.on('click', (e) => {
+      $tweetForm.slideDown();
+      const newTweetTop = $('.new-tweet').offset().top
+      const navHeight = $('nav').outerHeight();
+      const scrollToPosition = newTweetTop - navHeight - 10; //10 for margin
+      $('html,body').animate({
+        scrollTop: scrollToPosition
+      },'slow');
+      $('.new-tweet textarea').focus();
+    });
+  };
   
   loadTweets();
   tweeting();
+  showForm();
   
 });
