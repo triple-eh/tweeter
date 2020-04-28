@@ -1,6 +1,7 @@
 .new-tweet {
   overflow: hidden;
   display: none;
+  margin-top: 10px;
 }
 .new-tweet label {
   color: #4056A1;

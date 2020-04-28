@@ -101,7 +101,7 @@ $(() => {
       $tweetForm.slideDown();
       const newTweetTop = $('.new-tweet').offset().top;
       const navHeight = $('nav').outerHeight();
-      const scrollToPosition = newTweetTop - navHeight - 10; //10 for margin
+      const scrollToPosition = newTweetTop - navHeight;
       $('html,body').animate({
         scrollTop: scrollToPosition
       },'slow');
