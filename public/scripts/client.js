@@ -24,8 +24,8 @@ $(() => {
 
   const loadTweets = () => {
     const $tweets = $('#tweets');
-    $tweets.empty();
     $.getJSON('tweets',(tweets) => {
+      $tweets.empty();
       renderTweets(tweets);
     });
   };
@@ -89,6 +89,7 @@ $(() => {
       if ($submissionError.hasClass('error')) $submissionError.removeClass('error');
       const tweetSerialized = $(e.target).serialize();
       $(e.target).children('textarea').val("");
+      $(e.target).children('.counter').val(140);
       $.post('/tweets', tweetSerialized, () => {
         loadTweets();
       });
