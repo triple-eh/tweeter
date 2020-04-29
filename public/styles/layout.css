@@ -31,4 +31,12 @@ body {
    margin: auto;
    width: 90%;
    background-color: inherit;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    main {
+      width: 75%;
+      display: inline-block;
+      margin-left: 25%;
+   }
  }

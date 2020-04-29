@@ -109,3 +109,12 @@ div.avatar img {
   text-align: center;
   vertical-align: middle;
 }
+
+@media screen and (min-width: 1024px) {
+  #tweets {
+    margin-top: 5px;
+  }
+  .tweet {
+    margin-top: 0;
+  }
+}
